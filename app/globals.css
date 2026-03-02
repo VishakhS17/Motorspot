@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --motorspot-bg: #0B0B0C;
+  --motorspot-panel: #1A1C1F;
+  --motorspot-accent: #2563EB; /* blue accent */
+  --motorspot-text: #EDEDED;
+  --motorspot-highlight: #9CA3AF; /* gray highlight */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--motorspot-bg);
+  color: var(--motorspot-text);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+[data-video-disabled="true"] video {
+  display: none;
+}
