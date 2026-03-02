@@ -68,18 +68,12 @@ export function Hero() {
         />
       </div>
       <div className="relative z-10 flex flex-col items-center text-center px-4 py-24 lg:py-32 max-w-3xl mx-auto">
-        <p className="text-[0.6rem] sm:text-xs tracking-[0.14em] sm:tracking-[0.2em] text-motorspot-highlight mb-4 uppercase">
-          Edappally, Kochi
+        <p className="hero-text-glow font-extrabold text-[0.8rem] sm:text-sm tracking-[0.2em] sm:tracking-[0.28em] text-motorspot-accent mb-4 uppercase">
+          Kochi, Kerala
         </p>
-        <h1 className="text-[clamp(2.1rem,10vw,5.5rem)] tracking-[0.08em] sm:tracking-[0.16em] leading-tight sm:leading-none mb-3">
+        <h1 className="text-[clamp(2.3rem,11vw,5.75rem)] tracking-[0.12em] sm:tracking-[0.18em] leading-tight sm:leading-none">
           MOTORSPOT
         </h1>
-        <p className="hero-text-glow font-bold text-[0.7rem] sm:text-xs tracking-[0.12em] sm:tracking-[0.24em] text-motorspot-accent mb-1 uppercase max-w-[20rem] sm:max-w-[26rem] mx-auto">
-          AUTOMOTIVE PERFORMANCE & RESTYLING LAB
-        </p>
-        <p className="hero-text-glow font-bold text-[0.75rem] sm:text-sm tracking-[0.11em] sm:tracking-[0.16em] text-motorspot-accent mb-8">
-          Detailing // Protection // Customization
-        </p>
         <div className="flex justify-center">
           <Link
             href="/#services"
