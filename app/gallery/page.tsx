@@ -1,16 +1,14 @@
-import Image from "next/image";
 import { GalleryGrid } from "@/components/GalleryGrid";
 
+// Local gallery stills from public/video (export-safe)
 const GALLERY_IMAGES = [
-  "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
-  "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80",
-  "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80",
-  "https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80",
-  "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80",
-  "https://images.unsplash.com/photo-1504708691000-c9ff1096e54e?w=800&q=80",
-  "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80",
-  "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80",
-  "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=800&q=80",
+  "/video/Screenshot 2026-03-03 003112.jpg",
+  "/video/Screenshot 2026-03-03 003134.jpg",
+  "/video/Screenshot 2026-03-03 003242.jpg",
+  "/video/Screenshot 2026-03-03 003400.jpg",
+  "/video/Screenshot 2026-03-03 003438.jpg",
+  "/video/Screenshot 2026-03-03 003547.jpg",
+  "/video/p1.jpg",
 ] as const;
 
 export const metadata = {

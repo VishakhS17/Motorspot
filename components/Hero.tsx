@@ -2,9 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
-
-const HERO_POSTER = "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&q=80";
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -15,40 +12,35 @@ export function Hero() {
     const video = videoRef.current;
     if (!container || !video) return;
 
-    const connection =
-      (navigator as Navigator & { connection?: { saveData?: boolean } })
-        .connection ||
-      (navigator as Navigator & { mozConnection?: { saveData?: boolean } })
-        .mozConnection ||
-      undefined;
-    const saveData =
-      (navigator as Navigator & { saveData?: boolean }).saveData ||
-      connection?.saveData;
-    const isDataSaver = saveData === true;
-    const isSmallScreen = typeof window !== "undefined" && window.innerWidth < 768;
+    // Strengthen autoplay reliability on mobile (esp. iOS Safari)
+    video.muted = true;
+    video.autoplay = true;
+    video.playsInline = true;
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
 
-    if (isDataSaver || isSmallScreen) {
-      container.dataset.videoDisabled = "true";
-      return;
-    }
+    const tryPlay = () => {
+      try {
+        video.load();
+      } catch {
+        // ignore
+      }
+      video.play().catch(() => {
+        // Mobile browsers may still block autoplay in some modes (Low Power, data saver, etc.)
+        container.dataset.videoDisabled = "true";
+      });
+    };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            video
-              .play()
-              .catch(() => {
-                container.dataset.videoDisabled = "true";
-              });
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+    // Attempt immediately after mount (default behavior)
+    tryPlay();
 
-    observer.observe(container);
-    return () => observer.disconnect();
+    // Retry once video has enough data
+    const onLoadedData = () => tryPlay();
+    video.addEventListener("loadeddata", onLoadedData, { once: true });
+
+    return () => {
+      video.removeEventListener("loadeddata", onLoadedData);
+    };
   }, []);
 
   return (
@@ -58,28 +50,20 @@ export function Hero() {
       aria-label="Hero"
     >
       <div className="absolute inset-0">
-        <Image
-          src={HERO_POSTER}
-          alt="Motorspot automotive studio"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
         <video
           ref={videoRef}
-          className="absolute inset-0 w-full h-full object-cover"
-          poster={HERO_POSTER}
+          className="absolute inset-0 w-full h-full object-cover z-[1]"
+          autoPlay
           muted
           loop
           playsInline
-          preload="none"
+          preload="metadata"
           aria-hidden="true"
         >
-          <source src="/video/hero.mp4" type="video/mp4" />
+          <source src="/video/Video%20Project.mp4" type="video/mp4" />
         </video>
         <div
-          className="absolute inset-0 bg-gradient-to-b from-motorspot-bg/60 via-motorspot-bg/40 to-motorspot-bg/70 pointer-events-none"
+          className="absolute inset-0 z-[2] bg-gradient-to-b from-motorspot-bg/60 via-motorspot-bg/40 to-motorspot-bg/70 pointer-events-none"
           aria-hidden="true"
         />
       </div>

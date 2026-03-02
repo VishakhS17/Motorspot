@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
+// Use local hero/media stills from public/video
 const GALLERY_IMAGES = [
-  "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80",
-  "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80",
-  "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80",
-  "https://images.unsplash.com/photo-1542362567-b07e54358753?w=600&q=80",
-  "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80",
-  "https://images.unsplash.com/photo-1504708691000-c9ff1096e54e?w=600&q=80",
+  "/video/Screenshot 2026-03-03 003112.jpg",
+  "/video/Screenshot 2026-03-03 003134.jpg",
+  "/video/Screenshot 2026-03-03 003242.jpg",
+  "/video/Screenshot 2026-03-03 003400.jpg",
+  "/video/Screenshot 2026-03-03 003438.jpg",
+  "/video/Screenshot 2026-03-03 003547.jpg",
 ] as const;
 
 export function Gallery() {

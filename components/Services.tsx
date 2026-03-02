@@ -15,10 +15,10 @@ const SERVICES = [
     ],
   },
   {
-    id: "protection",
-    title: "PROTECTION",
+    id: "tyrex",
+    title: "TYREX",
     image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80",
-    items: ["Ceramic coating", "Sun protection film"],
+    items: ["Alloy wheel upgrades", "Performance tyres", "Wheel detailing"],
   },
   {
     id: "upgrades",
@@ -31,10 +31,10 @@ const SERVICES = [
     ],
   },
   {
-    id: "vehicles",
-    title: "VEHICLES",
+    id: "protection",
+    title: "PROTECTION",
     image: "https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80",
-    items: ["Pre-owned car sales", "Park & sell"],
+    items: ["Ceramic coating", "Sun protection film"],
   },
 ] as const;
 
