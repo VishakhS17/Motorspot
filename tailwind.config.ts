@@ -20,6 +20,7 @@ const config: Config = {
       fontFamily: {
         display: ["var(--font-bebas)", "sans-serif"],
         sans: ["var(--font-inter)", "sans-serif"],
+        orbitron: ["var(--font-orbitron)", "sans-serif"],
       },
     },
   },

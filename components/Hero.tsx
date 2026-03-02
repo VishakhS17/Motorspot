@@ -54,7 +54,7 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full min-h-[100svh] min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative w-full min-h-[100svh] min-h-screen flex items-center justify-center overflow-hidden font-orbitron"
       aria-label="Hero"
     >
       <div className="absolute inset-0">
@@ -83,31 +83,23 @@ export function Hero() {
           aria-hidden="true"
         />
       </div>
-      <div className="relative z-10 text-center px-4 py-24 lg:py-32 max-w-3xl mx-auto">
+      <div className="relative z-10 flex flex-col items-center text-center px-4 py-24 lg:py-32 max-w-3xl mx-auto">
         <p className="text-[0.65rem] sm:text-xs tracking-[0.18em] sm:tracking-[0.2em] text-motorspot-highlight mb-4 uppercase">
           Edappally, Kochi
         </p>
-        <h1 className="font-display text-[clamp(2.75rem,14vw,7rem)] tracking-[0.12em] sm:tracking-[0.18em] leading-none mb-2">
+        <h1 className="text-[clamp(2.75rem,14vw,7rem)] tracking-[0.12em] sm:tracking-[0.18em] leading-none mb-2">
           MOTORSPOT
         </h1>
-        <p className="text-[0.65rem] sm:text-xs tracking-[0.14em] sm:tracking-[0.28em] text-motorspot-highlight mb-2 uppercase max-w-[26rem] mx-auto">
+        <p className="hero-text-glow font-bold text-[0.7rem] sm:text-xs tracking-[0.16em] sm:tracking-[0.28em] text-motorspot-accent mb-2 uppercase max-w-[26rem] mx-auto">
           AUTOMOTIVE PERFORMANCE & RESTYLING LAB
         </p>
-        <p className="text-xs sm:text-sm tracking-[0.12em] sm:tracking-[0.15em] text-motorspot-highlight/80 mb-10">
+        <p className="hero-text-glow font-bold text-[0.8rem] sm:text-sm tracking-[0.14em] sm:tracking-[0.17em] text-motorspot-accent mb-10">
           Detailing // Protection // Customization
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center">
-          <a
-            href="https://wa.me/917511128000?text=Hi%20I%20want%20to%20book%20an%20appointment%20at%20Motorspot"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto px-8 py-3 bg-motorspot-accent text-white font-medium tracking-wider hover:bg-motorspot-accent/90 transition-colors"
-          >
-            BOOK ON WHATSAPP
-          </a>
+        <div className="flex justify-center">
           <Link
             href="/#services"
-            className="w-full sm:w-auto px-8 py-3 border-2 border-motorspot-highlight text-motorspot-text font-medium tracking-wider hover:border-motorspot-accent hover:text-motorspot-accent transition-colors"
+            className="px-8 py-3 border-2 border-motorspot-accent text-motorspot-accent font-medium tracking-wider hover:bg-motorspot-accent hover:text-white transition-colors"
           >
             VIEW SERVICES
           </Link>
